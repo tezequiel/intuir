@@ -285,7 +285,6 @@ jQuery(document).ready(function ($) {
 
     if (fname.val() === undefined || fname.val() === '' ||
         lname.val() === undefined || lname.val() === '' ||
-        phone.val() === undefined || phone.val() === '' ||
         email.val() === undefined || email.val() === '' ||
         message.val() === undefined || message.val() === '') {
 
