@@ -75,10 +75,6 @@ h1, h2, h3, h4, h5,
     background: #e81050;
     border-color: #e81050;
     color: #fff; }
-    .btn.btn-primary:hover {
-      background: #fff;
-      border-color: #fff;
-      color: #e81050; }
     .btn.btn-primary.btn-black--hover:hover {
       background: #666666;
       color: #fff; }

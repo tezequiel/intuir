@@ -202,8 +202,7 @@
       <div class="row">
         <div class="col-md-12 mb-5">
 
-          <form action="https://formspree.io/italiargenta@gmail.com" method="post"
-                class="p-5 bg-white">
+          <form class="p-5 bg-white" id="contactForm">
 
             <h2 class="h4 text-black mb-5 text-center">Dejanos tu mensaje!</h2>
 
@@ -229,22 +228,22 @@
             <div class="row form-group">
 
               <div class="col-md-12">
-                <label class="text-black" for="subject">Asunto</label>
-                <input type="subject" id="subject" name="subject" class="form-control">
+                <label class="text-black" for="phone">Tel&eacute;fono</label>
+                <input type="phone" id="phone" name="phone" class="form-control">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="text-black" for="message">Mensaje</label>
-                <textarea name="message" id="message" name="message" cols="30" rows="7"
+                <textarea id="message" name="message" cols="30" rows="7"
                           class="form-control"></textarea>
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <input type="submit" value="Enviar" class="btn btn-primary btn-md text-white">
+                <button id="submitButton" value="Enviar" class="btn btn-primary btn-md text-white">Enviar</button>
               </div>
             </div>
 
@@ -295,7 +294,24 @@
       </div>
     </div>
   </footer>
-
+  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Listo!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Gracias por contactarte con nosotros! Te responderemos a la brevedad!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" >OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div> <!-- .site-wrap -->
 
 <script src="js/jquery-3.3.1.min.js"></script>
