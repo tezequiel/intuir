@@ -1,10 +1,10 @@
 /**
-* Template Name: FlexStart - v1.3.0
-* Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
+ * Template Name: FlexStart - v1.3.0
+ * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
+(function () {
   "use strict";
 
   /**
@@ -31,7 +31,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -44,10 +44,15 @@
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
+      if (!navbarlink.hash) {
+        return
+      }
       let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+      if (!section) {
+        return
+      }
+      if (position >= section.offsetTop && position <= (section.offsetTop
+        + section.offsetHeight)) {
         navbarlink.classList.add('active')
       } else {
         navbarlink.classList.remove('active')
@@ -108,9 +113,16 @@
   }
 
   /**
+   * Whatsapp button
+   */
+  on('click', '.whatsapp-btn', function (e) {
+    window.open('https://wa.me/5491157971509', "_blank");
+  });
+
+  /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -119,7 +131,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -129,7 +141,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -204,9 +216,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -221,7 +233,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfokio-lightbox'
@@ -282,6 +294,7 @@
       mirror: false
     });
   }
+
   window.addEventListener('load', () => {
     aos_init();
   });
