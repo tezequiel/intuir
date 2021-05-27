@@ -14,27 +14,31 @@
     e.addEventListener('submit', function (event) {
       event.preventDefault();
 
-      let thisForm = this;
+      const thisForm = this;
+      const formData = new FormData(thisForm);
 
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
+      const data = new FormData();
+      if (thisForm.id === 'newsletterForm') {
+        data.append("value1", 'Email: ' + formData.get('email'));
+      } else {
+        thisForm.querySelector('.loading').classList.add('d-block');
+        thisForm.querySelector('.error-message').classList.remove('d-block');
+        thisForm.querySelector('.sent-message').classList.remove('d-block');
 
-      let formData = new FormData(thisForm);
-      const json = {
-        'value1': 'Nombre: ' + formData.get('name'),
-        'value2': 'Email: ' + formData.get('email') + "<br> Telefono: "
-          + formData.get('phone'),
-        'value3': 'Mensaje: ' + formData.get('message'),
-      };
-      email_form_submit(thisForm, json);
+        data.append("value1", 'Nombre: ' + formData.get('name'));
+        data.append("value2", 'Email: ' + formData.get('email') +
+          "<br> Telefono: " + formData.get('phone'));
+        data.append("value3", 'Mensaje: ' + formData.get('message'));
+      }
+
+      email_form_submit(thisForm, data);
     });
   });
 
-  function email_form_submit(thisForm, json) {
+  function email_form_submit(thisForm, data) {
     fetch(IFTTT_ACTION, {
       method: 'POST',
-      body: JSON.stringify(json),
+      body: new URLSearchParams(data),
       headers: {'X-Requested-With': 'XMLHttpRequest'},
       mode: 'no-cors',
     })
