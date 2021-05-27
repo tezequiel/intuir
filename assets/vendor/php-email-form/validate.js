@@ -19,7 +19,7 @@
 
       const data = new FormData();
       if (thisForm.id === 'newsletterForm') {
-        data.append("value1", 'Email: ' + formData.get('email'));
+        data.append("value1", formData.get('email'));
       } else {
         thisForm.querySelector('.loading').classList.add('d-block');
         thisForm.querySelector('.error-message').classList.remove('d-block');
