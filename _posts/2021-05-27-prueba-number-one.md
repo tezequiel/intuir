@@ -8,4 +8,4 @@ images: [ /assets/img/blog/blog-1.jpg, /assets/img/blog/blog-inside-post.jpg ]
 
 ---
 
-Este sería el contenido del blog.
+Prueba 1
