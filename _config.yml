@@ -1,0 +1,23 @@
+# Site settings
+title: cuentos en minúscula
+author: "Pachi Valenzuela"
+instagram: "http://instagram.com/pachivalenzuelaenpapel"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+#collections:
+#  posts:
+#    output: true
+#    permalink: /:categories/:title
+
+# Build settings
+#markdown: kramdown
+paginate: 1
+paginate_path: "/blog/page:num/"
+
+plugins: [jekyll-paginate, jekyll-feed]
