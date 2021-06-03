@@ -51,7 +51,7 @@
       }
     })
     .then(data => {
-      //Google Analytics -> gtag('event', 'conversion', {'send_to': 'AW-436101450/2GJxCKSVgIoCEMrC-c8B'});
+      gtag('event', 'conversion', {'send_to': 'AW-436101450/2GJxCKSVgIoCEMrC-c8B'});
       thisForm.querySelector('.loading').classList.remove('d-block');
       thisForm.querySelector('.sent-message').classList.add('d-block');
       thisForm.reset();
