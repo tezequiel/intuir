@@ -1630,6 +1630,11 @@ section {
   height: 100%;
 }
 
+.newsletter {
+  background: #f6f9ff !important;
+  border: none !important;
+}
+
 .php-email-form .error-message {
   display: none;
   color: #fff;
@@ -2263,7 +2268,7 @@ section {
 .footer .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 8px;
-  width: calc(100% - 140px);
+  width: calc(100% - 105px);
 }
 
 .footer .footer-newsletter form input[type="submit"] {
