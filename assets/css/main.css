@@ -1630,6 +1630,11 @@ section {
   height: 100%;
 }
 
+.newsletter {
+  background: #f6f9ff !important;
+  border: none !important;
+}
+
 .php-email-form .error-message {
   display: none;
   color: #fff;
@@ -1725,7 +1730,7 @@ section {
 # Blog
 --------------------------------------------------------------*/
 .blog {
-  padding: 40px 0 20px 0;
+  padding: 115px 0 20px 0;
 }
 
 .blog .entry {
@@ -2263,7 +2268,7 @@ section {
 .footer .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 8px;
-  width: calc(100% - 140px);
+  width: calc(100% - 142px);
 }
 
 .footer .footer-newsletter form input[type="submit"] {
