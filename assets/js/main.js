@@ -113,6 +113,25 @@
   }
 
   /**
+   * Compare button
+   */
+  on('click', '.btn-compare', function (e) {
+    let icon = select('.btn-compare i');
+    let table = select('#plan-table');
+    if (table.hasAttribute('hidden')) {
+      icon.classList.add('bi-caret-up-fill');
+      icon.classList.remove('bi-caret-down-fill');
+      table.removeAttribute("hidden");
+      scrollto('.btn-compare');
+    } else {
+      icon.classList.remove('bi-caret-up-fill');
+      icon.classList.add('bi-caret-down-fill');
+      table.setAttribute('hidden', 'true');
+      scrollto('#compare');
+    }
+  });
+
+  /**
    * Whatsapp button
    */
   on('click', '.whatsapp-btn', function (e) {
