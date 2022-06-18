@@ -40,14 +40,14 @@
   /**
    * Navbar links active state on scroll
    */
-  let navbarlinks = select('#navbar .scrollto', true)
+  let navbarlinks = select('#navbar .scrollto', true);
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
     navbarlinks.forEach(navbarlink => {
       if (!navbarlink.hash) {
         return
       }
-      let section = select(navbarlink.hash)
+      let section = select(navbarlink.hash);
       if (!section) {
         return
       }
@@ -66,14 +66,14 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
+    let header = select('#header');
+    let offset = header.offsetHeight;
 
     if (!header.classList.contains('header-scrolled')) {
       offset -= 10
     }
 
-    let elementPos = select(el).offsetTop
+    let elementPos = select(el).offsetTop;
     window.scrollTo({
       top: elementPos - offset,
       behavior: 'smooth'
@@ -92,7 +92,7 @@
         selectHeader.classList.remove('header-scrolled')
       }
     }
-    window.addEventListener('load', headerScrolled)
+    window.addEventListener('load', headerScrolled);
     onscroll(document, headerScrolled)
   }
 
@@ -108,22 +108,22 @@
         backtotop.classList.remove('active')
       }
     }
-    window.addEventListener('load', toggleBacktotop)
+    window.addEventListener('load', toggleBacktotop);
     onscroll(document, toggleBacktotop)
   }
 
   /**
    * Whatsapp button
    */
-  on('click', '.whatsapp-btn', function (e) {
+  on('click', '.whatsapp-cta', function (e) {
     window.open('https://wa.me/5491157971509', "_blank");
-  });
+  }, true);
 
   /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function (e) {
-    select('#navbar').classList.toggle('navbar-mobile')
+    select('#navbar').classList.toggle('navbar-mobile');
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
@@ -147,9 +147,9 @@
 
       let navbar = select('#navbar')
       if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
+        navbar.classList.remove('navbar-mobile');
+        let navbarToggle = select('.mobile-nav-toggle');
+        navbarToggle.classList.toggle('bi-list');
         navbarToggle.classList.toggle('bi-x')
       }
       scrollto(this.hash)
