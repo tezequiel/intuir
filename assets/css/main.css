@@ -1510,12 +1510,17 @@ section {
   transition: 0.3s;
 }
 
+.clients .clients-slider .swiper-slide .exam img {
+  opacity: 0.5;
+  transition: 0.15s;
+}
+
 .clients .clients-slider .swiper-slide img:hover {
   opacity: 1;
 }
 
-.clients .clients-slider .swiper-pagination {
-  margin-top: 20px;
+.swiper-pagination {
+  margin-top: 25px;
   position: relative;
 }
 
