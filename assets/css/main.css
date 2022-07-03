@@ -815,6 +815,17 @@ section {
   display: inline-block;
   line-height: 0;
   transition: 0.3s;
+  max-width: 90%;
+}
+
+.services .service-box .icon-work {
+  font-size: 36px;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 25px;
+  display: inline-block;
+  line-height: 0;
+  transition: 0.3s;
   max-width: 76px;
 }
 
