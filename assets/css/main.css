@@ -989,6 +989,8 @@ section {
   color: #444444;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
+  visibility: hidden;
+  display: none;
 }
 
 .pricing .price sup {
