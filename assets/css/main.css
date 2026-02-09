@@ -491,30 +491,30 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content {
+:is(.about, .values) .content {
   background-color: #f6f9ff;
   padding: 40px;
 }
 
-.about h3 {
+:is(.about, .values) h3 {
   font-size: 14px;
   font-weight: 700;
   color: #4154f1;
   text-transform: uppercase;
 }
 
-.about h2 {
+:is(.about, .values) h2 {
   font-size: 24px;
   font-weight: 700;
   color: #012970;
 }
 
-.about p {
+:is(.about, .values) p {
   margin: 15px 0 30px 0;
   line-height: 24px;
 }
 
-.about .btn-read-more {
+:is(.about, .values) .btn-read-more {
   line-height: 0;
   padding: 15px 40px;
   border-radius: 4px;
@@ -524,20 +524,20 @@ section {
   box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
 }
 
-.about .btn-read-more span {
+:is(.about, .values) .btn-read-more span {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
 }
 
-.about .btn-read-more i {
+:is(.about, .values) .btn-read-more i {
   margin-left: 5px;
   font-size: 18px;
   transition: 0.3s;
 }
 
-.about .btn-read-more:hover i {
+:is(.about, .values) .btn-read-more:hover i {
   transform: translateX(5px);
 }
 
@@ -915,6 +915,7 @@ section {
 
 .pricing ul {
   padding: 0;
+  margin-top: 50px;
   list-style: none;
   color: #444444;
   text-align: center;
@@ -1220,10 +1221,8 @@ section {
 }
 
 .footer .footer-top {
-  background: white url(../img/footer-bg.png) no-repeat right top;
+  background: white;
   background-size: contain;
-  border-top: 1px solid #e1ecff;
-  border-bottom: 1px solid #e1ecff;
   padding: 60px 0 30px 0;
 }
 
