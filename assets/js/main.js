@@ -23,6 +23,17 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
+   * Whatsapp button
+   */
+  let whatsAppBtn = document.querySelector('.whatsapp-btn');
+  if(whatsAppBtn) {
+    whatsAppBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open('https://wa.me/5491157971509', "_blank");
+    });
+  }
+
+  /**
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -36,16 +47,23 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+    navmenu.addEventListener('click', (e) => {
+      if (navmenu.hash && document.querySelector(navmenu.hash)) {
+        e.preventDefault();
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+
+        let target = document.querySelector(navmenu.hash);
+        let scrollMarginTop = getComputedStyle(target).scrollMarginTop;
+
+        window.scrollTo({
+          top: target.offsetTop - parseInt(scrollMarginTop || 0),
+          behavior: 'smooth'
+        });
       }
     });
-
   });
 
   /**
@@ -70,13 +88,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
