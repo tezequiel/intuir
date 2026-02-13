@@ -1121,6 +1121,11 @@ section,
   margin-bottom: 0;
 }
 
+.alt-features .section-title p {
+  font-size: 20px;
+  font-weight: 35;
+}
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -1351,7 +1356,7 @@ section,
   text-decoration: line-through;
 }
 
-.pricing .btn-buy {
+:is(.pricing, .values) .btn-buy {
   display: inline-block;
   padding: 8px 40px 10px 40px;
   border-radius: 50px;
@@ -1365,7 +1370,7 @@ section,
   border: 1px solid var(--accent-color);
 }
 
-.pricing .btn-buy:hover {
+:is(.pricing, .values) .btn-buy:hover {
   background: var(--accent-color);
   color: var(--contrast-color);
 }
