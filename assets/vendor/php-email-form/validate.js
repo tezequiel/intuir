@@ -26,11 +26,11 @@
       formData.append("value2", "Nombre: " + thisForm.elements.name.value + '<br>Email: ' + thisForm.elements.email.value + "<br>Telefono: " + thisForm.elements.phone.value);
       formData.append("value3", 'Mensaje: ' + thisForm.elements.message.value);
 
-      php_email_form_submit(thisForm, action, formData);
+      php_email_form_submit(thisForm, formData);
     });
   });
 
-  function php_email_form_submit(thisForm, action, formData) {
+  function php_email_form_submit(thisForm, formData) {
     fetch(IFTTT_ACTION, {
       method: 'POST',
       body: new URLSearchParams(formData),
@@ -38,7 +38,7 @@
       mode: 'no-cors'
     })
     .then(response => {
-      if( response.ok ) {
+      if( response.status === 0 ) {
         return response.text();
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
@@ -46,13 +46,9 @@
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        gtag('event', 'conversion', {'send_to': 'AW-436101450/2GJxCKSVgIoCEMrC-c8B'});
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
+      gtag('event', 'conversion', {'send_to': 'AW-436101450/2GJxCKSVgIoCEMrC-c8B'});
+      thisForm.querySelector('.sent-message').classList.add('d-block');
+      thisForm.reset(); 
     })
     .catch((error) => {
       displayError(thisForm, error);
